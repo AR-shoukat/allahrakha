@@ -3,139 +3,215 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Allah Rakha - Portfolio</title>
+<title>Allah Rakha | Game Developer</title>
 
 <style>
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: Arial, sans-serif;
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Arial;
 }
 
-body {
-    background: linear-gradient(135deg, #0f172a, #1e293b);
-    color: white;
-    text-align: center;
+body{
+background:#0b1220;
+color:white;
+scroll-behavior:smooth;
 }
 
-/* HERO SECTION */
-.hero {
-    padding: 100px 20px;
-    animation: fadeIn 2s ease-in-out;
+/* NAVBAR */
+nav{
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:20px 50px;
+background:rgba(0,0,0,0.4);
+backdrop-filter:blur(10px);
+position:sticky;
+top:0;
+z-index:1000;
 }
 
-.hero h1 {
-    font-size: 50px;
-    color: #38bdf8;
-    animation: slideDown 1s ease-in-out;
+nav h1{
+color:#38bdf8;
 }
 
-.hero h2 {
-    font-size: 25px;
-    color: #a5b4fc;
-    margin-top: 10px;
+nav a{
+color:white;
+margin:0 10px;
+text-decoration:none;
+transition:0.3s;
 }
 
-/* BUTTON */
-.btn {
-    display: inline-block;
-    margin-top: 20px;
-    padding: 12px 25px;
-    background: #38bdf8;
-    color: black;
-    border-radius: 30px;
-    text-decoration: none;
-    transition: 0.3s;
+nav a:hover{
+color:#38bdf8;
 }
 
-.btn:hover {
-    background: #0ea5e9;
-    transform: scale(1.1);
+/* HERO */
+.hero{
+height:90vh;
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+text-align:center;
+background:linear-gradient(135deg,#0f172a,#1e3a8a,#0f172a);
+animation:bgMove 6s infinite alternate;
+}
+
+.hero h1{
+font-size:60px;
+animation:fadeDown 1s ease;
+}
+
+.hero p{
+font-size:22px;
+color:#cbd5e1;
+margin-top:10px;
+}
+
+.btn{
+margin-top:20px;
+padding:12px 30px;
+background:#38bdf8;
+color:black;
+border-radius:30px;
+text-decoration:none;
+transition:0.3s;
+}
+
+.btn:hover{
+transform:scale(1.1);
+background:#0ea5e9;
 }
 
 /* SECTIONS */
-.section {
-    padding: 60px 20px;
+section{
+padding:80px 10%;
+text-align:center;
 }
 
-h3 {
-    font-size: 28px;
-    margin-bottom: 20px;
-    color: #38bdf8;
+h2{
+font-size:35px;
+margin-bottom:30px;
+color:#38bdf8;
 }
 
 /* CARDS */
-.card {
-    background: rgba(255,255,255,0.1);
-    padding: 20px;
-    margin: 15px auto;
-    width: 80%;
-    border-radius: 15px;
-    transition: 0.3s;
-    backdrop-filter: blur(10px);
+.grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:20px;
 }
 
-.card:hover {
-    transform: translateY(-10px);
-    background: rgba(255,255,255,0.2);
+.card{
+background:rgba(255,255,255,0.05);
+padding:20px;
+border-radius:15px;
+transition:0.3s;
+border:1px solid rgba(255,255,255,0.1);
 }
 
-/* ANIMATIONS */
-@keyframes fadeIn {
-    from {opacity: 0;}
-    to {opacity: 1;}
+.card:hover{
+transform:translateY(-10px);
+background:rgba(56,189,248,0.1);
 }
 
-@keyframes slideDown {
-    from {transform: translateY(-50px); opacity: 0;}
-    to {transform: translateY(0); opacity: 1;}
+/* SKILLS */
+.skill{
+display:inline-block;
+padding:10px 15px;
+margin:5px;
+background:#1e293b;
+border-radius:20px;
 }
 
 /* FOOTER */
-footer {
-    padding: 20px;
-    background: #0f172a;
-    margin-top: 40px;
-    font-size: 14px;
-    color: #94a3b8;
+footer{
+padding:20px;
+text-align:center;
+background:#020617;
+color:#94a3b8;
+margin-top:50px;
+}
+
+/* ANIMATIONS */
+@keyframes fadeDown{
+from{opacity:0;transform:translateY(-50px);}
+to{opacity:1;transform:translateY(0);}
+}
+
+@keyframes bgMove{
+from{filter:hue-rotate(0deg);}
+to{filter:hue-rotate(20deg);}
+}
+
+/* RESPONSIVE */
+@media(max-width:768px){
+.hero h1{font-size:40px;}
+nav{flex-direction:column;}
 }
 </style>
 
 </head>
+
 <body>
 
+<nav>
+<h1>Allah Rakha</h1>
+<div>
+<a href="#about">About</a>
+<a href="#projects">Projects</a>
+<a href="#skills">Skills</a>
+<a href="#contact">Contact</a>
+</div>
+</nav>
+
 <div class="hero">
-    <h1>Hi, I'm Allah Rakha 👋</h1>
-    <h2>Unity Game Developer 🎮</h2>
-    <a class="btn" href="#projects">View My Work</a>
+<h1>Hi, I'm Allah Rakha 🎮</h1>
+<p>Unity Game Developer | C# Programmer</p>
+<a class="btn" href="#projects">View Projects</a>
 </div>
 
-<div class="section" id="about">
-    <h3>About Me</h3>
-    <div class="card">
-        I create fun and interactive games using Unity and C#. I love building 3D & 2D games.
-    </div>
+<section id="about">
+<h2>About Me</h2>
+<div class="card">
+I am a Unity Game Developer who creates 2D and 3D games using C#. I love building interactive and fun gaming experiences.
 </div>
+</section>
 
-<div class="section" id="projects">
-    <h3>Projects</h3>
+<section id="projects">
+<h2>Projects</h2>
+<div class="grid">
 
-    <div class="card">🎮 Car Racing Game</div>
-    <div class="card">🔫 Shooting Game</div>
-    <div class="card">🧩 Puzzle Game</div>
+<div class="card">🎮 Car Racing Game</div>
+<div class="card">🔫 FPS Shooting Game</div>
+<div class="card">🧩 Puzzle Adventure Game</div>
+<div class="card">🏃 Endless Runner Game</div>
+
 </div>
+</section>
 
-<div class="section">
-    <h3>Contact</h3>
-    <div class="card">
-        Email: your@email.com <br>
-        Fiverr: coming soon
-    </div>
+<section id="skills">
+<h2>Skills</h2>
+<span class="skill">Unity</span>
+<span class="skill">C#</span>
+<span class="skill">Game Design</span>
+<span class="skill">3D Modeling</span>
+<span class="skill">UI/UX</span>
+</section>
+
+<section id="contact">
+<h2>Contact</h2>
+<div class="card">
+Email: your@email.com <br>
+Fiverr: coming soon <br>
+GitHub: your profile
 </div>
+</section>
 
 <footer>
-    © 2026 Allah Rakha | Unity Game Developer
+© 2026 Allah Rakha | Built with ❤️ in GitHub Pages
 </footer>
 
 </body>
