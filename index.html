@@ -3,382 +3,165 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>AR Dev | AAA Game Developer</title>
-
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<title>Allah Rakha | Portfolio</title>
 
 <style>
-
-/* ================= BASE ================= */
 *{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-    font-family:'Poppins',sans-serif;
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:system-ui, Arial;
 }
 
 body{
-    background:#05070f;
-    color:white;
-    overflow-x:hidden;
+background:#111;
+color:white;
 }
 
-/* ================= PARTICLES BACKGROUND ================= */
-#particles{
-    position:fixed;
-    width:100%;
-    height:100%;
-    z-index:-1;
-    top:0;
-    left:0;
-}
-
-/* ================= LAYOUT ================= */
+/* MAIN LAYOUT */
 .container{
-    width:90%;
-    max-width:1200px;
-    margin:auto;
+display:flex;
+height:100vh;
 }
 
-section{
-    padding:140px 0;
+/* LEFT IMAGE SIDE */
+.left{
+flex:1;
+background:#000;
+display:flex;
+align-items:center;
+justify-content:center;
+position:relative;
 }
 
-/* ================= NAV ================= */
-header{
-    position:fixed;
-    top:0;
-    width:100%;
-    background:rgba(10,15,25,0.6);
-    backdrop-filter:blur(14px);
-    border-bottom:1px solid #00d4ff22;
-    z-index:1000;
+.left img{
+width:90%;
+height:90%;
+object-fit:cover;
+border-radius:20px;
+box-shadow:0 0 40px rgba(0,0,0,0.7);
 }
 
-nav{
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    padding:18px 0;
+/* RIGHT CONTENT */
+.right{
+flex:1;
+display:flex;
+align-items:center;
+padding:60px;
+background:#111;
 }
 
-.logo{
-    font-size:28px;
-    font-weight:800;
-    color:#00d4ff;
+.content h4{
+color:#fbbf24;
+letter-spacing:2px;
 }
 
-nav ul{
-    display:flex;
-    gap:25px;
-    list-style:none;
+.content h1{
+font-size:50px;
+margin-top:10px;
 }
 
-nav a{
-    color:#ddd;
-    text-decoration:none;
-    transition:0.3s;
+.content h1 span{
+color:#fbbf24;
 }
 
-nav a:hover{
-    color:#00d4ff;
+.content h2{
+font-size:28px;
+margin-top:10px;
+color:#e5e5e5;
 }
 
-/* ================= HERO ================= */
-.hero{
-    min-height:100vh;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    text-align:center;
+.content p{
+margin-top:15px;
+color:#aaa;
+max-width:500px;
+line-height:1.6;
 }
 
-.hero h1{
-    font-size:65px;
-}
-
-.hero h1 span{
-    color:#00d4ff;
-}
-
-.hero p{
-    margin-top:20px;
-    color:#cbd5e1;
-}
-
-/* ================= BUTTON ================= */
+/* BUTTON */
 .btn{
-    display:inline-block;
-    margin-top:30px;
-    padding:14px 32px;
-    border-radius:12px;
-    background:linear-gradient(135deg,#00d4ff,#0066ff);
-    color:#001018;
-    font-weight:700;
-    text-decoration:none;
-    transition:0.3s;
+display:inline-block;
+margin-top:25px;
+padding:12px 25px;
+background:#fbbf24;
+color:black;
+border-radius:30px;
+text-decoration:none;
+font-weight:bold;
+transition:0.3s;
 }
 
 .btn:hover{
-    transform:translateY(-3px);
-    box-shadow:0 0 25px #00d4ff55;
+transform:scale(1.05);
 }
 
-/* ================= CARDS ================= */
-.grid{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
-    gap:25px;
+/* RIGHT FLOAT MENU (like image) */
+.menu{
+position:fixed;
+right:20px;
+top:50%;
+transform:translateY(-50%);
+display:flex;
+flex-direction:column;
+gap:15px;
 }
 
-.card{
-    background:rgba(255,255,255,0.05);
-    border:1px solid #00d4ff1a;
-    border-radius:16px;
-    padding:25px;
-    backdrop-filter:blur(10px);
-    transition:0.5s;
+.menu div{
+width:45px;
+height:45px;
+border-radius:50%;
+background:#222;
+display:flex;
+align-items:center;
+justify-content:center;
+cursor:pointer;
+transition:0.3s;
 }
 
-.card:hover{
-    transform:translateY(-10px);
-    box-shadow:0 0 25px #00d4ff22;
+.menu div:hover{
+background:#fbbf24;
+color:black;
 }
-
-/* ================= PROJECT ================= */
-.project img{
-    width:100%;
-    height:200px;
-    object-fit:cover;
-    border-radius:12px;
-    margin-bottom:15px;
-}
-
-.project h3{
-    color:#00d4ff;
-}
-
-/* ================= LINKS ================= */
-.links{
-    display:flex;
-    gap:10px;
-    margin-top:15px;
-}
-
-.links a{
-    flex:1;
-    text-align:center;
-    padding:10px;
-    border-radius:10px;
-    background:#00d4ff;
-    color:#001018;
-    text-decoration:none;
-    font-weight:600;
-}
-
-/* ================= SCROLL ANIMATION ================= */
-.hidden{
-    opacity:0;
-    transform:translateY(60px);
-    transition:all 0.8s ease;
-}
-
-.show{
-    opacity:1;
-    transform:translateY(0);
-}
-
-/* ================= WHATSAPP FLOAT BUTTON ================= */
-.whatsapp{
-    position:fixed;
-    bottom:20px;
-    right:20px;
-    background:#25D366;
-    width:60px;
-    height:60px;
-    border-radius:50%;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    font-size:30px;
-    box-shadow:0 0 20px #25D36655;
-    text-decoration:none;
-    z-index:999;
-    transition:0.3s;
-}
-
-.whatsapp:hover{
-    transform:scale(1.1);
-}
-
-/* ================= RESPONSIVE ================= */
-@media(max-width:768px){
-.hero h1{font-size:40px;}
-nav{flex-direction:column;}
-nav ul{flex-wrap:wrap;justify-content:center;}
-}
-
 </style>
+
 </head>
 
 <body>
 
-<canvas id="particles"></canvas>
-
-<header>
 <div class="container">
-<nav>
-<div class="logo">AR DEV</div>
-<ul>
-<li><a href="#about">About</a></li>
-<li><a href="#skills">Skills</a></li>
-<li><a href="#projects">Projects</a></li>
-<li><a href="#contact">Contact</a></li>
-</ul>
-</nav>
-</div>
-</header>
 
-<section class="hero">
-<div class="container">
-<h1>Hi, I'm <span>AR Dev</span></h1>
-<p>Unity Game Developer | Systems | Monetization | AAA Mobile Games</p>
-<a href="#projects" class="btn">View My Work</a>
-</div>
-</section>
-
-<section id="about" class="hidden">
-<div class="container">
-<h2>About Me</h2>
-<div class="card">
-Unity Game Developer building high-performance mobile games with advanced systems and monetization.
-</div>
-</div>
-</section>
-
-<section id="skills" class="hidden">
-<div class="container">
-<h2>Skills</h2>
-
-<div class="grid">
-<div class="card">Unity 3D / Unity 6</div>
-<div class="card">C# Programming</div>
-<div class="card">AdMob / IAP</div>
-<div class="card">Firebase</div>
+<!-- LEFT IMAGE -->
+<div class="left">
+<img src="myphoto.jpg" alt="profile">
 </div>
 
-</div>
-</section>
+<!-- RIGHT CONTENT -->
+<div class="right">
+<div class="content">
 
-<section id="projects" class="hidden">
-<div class="container">
-<h2>Projects</h2>
+<h4>— I'M ALLAH RAKHA</h4>
+<h1>UNITY <span>DEVELOPER</span></h1>
 
-<div class="grid">
+<h2>Game Developer & C# Programmer</h2>
 
-<div class="card project">
-<img src="https://images.unsplash.com/photo-1511512578047-dfb367046420?auto=format&fit=crop&w=1200&q=80">
-<h3>Turbo Dismount Clone</h3>
-<div class="links">
-<a href="#" class="hover-sound">APK</a>
-<a href="#" class="hover-sound">Video</a>
-</div>
-</div>
+<p>
+I build modern 2D & 3D Unity games with smooth gameplay, UI systems and interactive mechanics.
+</p>
 
-<div class="card project">
-<img src="https://images.unsplash.com/photo-1508873699372-7aeab60b44ab?auto=format&fit=crop&w=1200&q=80">
-<h3>Prison Escape</h3>
-<div class="links">
-<a href="#" class="hover-sound">APK</a>
-<a href="#" class="hover-sound">Video</a>
+<a class="btn" href="#contact">HIRE ME</a>
+
 </div>
 </div>
 
 </div>
+
+<!-- SIDE MENU -->
+<div class="menu">
+<div>🏠</div>
+<div>👤</div>
+<div>💼</div>
+<div>✉️</div>
 </div>
-</section>
-
-<section id="contact" class="hidden">
-<div class="container">
-<h2>Contact</h2>
-<div class="card">
-Email: your@email.com
-</div>
-</div>
-</section>
-
-<!-- WHATSAPP BUTTON -->
-<a class="whatsapp" href="https://wa.me/923000000000" target="_blank">💬</a>
-
-<!-- SOUND -->
-<audio id="hoverSound" src="https://www.soundjay.com/buttons/sounds/button-16.mp3" preload="auto"></audio>
-
-<script>
-
-/* ================= SCROLL ANIMATION ================= */
-const observer = new IntersectionObserver(entries=>{
-    entries.forEach(entry=>{
-        if(entry.isIntersecting){
-            entry.target.classList.add("show");
-        }
-    });
-});
-
-document.querySelectorAll(".hidden").forEach(el=>{
-    observer.observe(el);
-});
-
-/* ================= HOVER SOUND ================= */
-const sound = document.getElementById("hoverSound");
-
-document.querySelectorAll(".hover-sound").forEach(btn=>{
-    btn.addEventListener("mouseenter", ()=>{
-        sound.currentTime = 0;
-        sound.play();
-    });
-});
-
-/* ================= PARTICLES SYSTEM ================= */
-const canvas = document.getElementById("particles");
-const ctx = canvas.getContext("2d");
-
-canvas.width = window.innerWidth;
-canvas.height = window.innerHeight;
-
-let particles = [];
-
-for(let i=0;i<80;i++){
-    particles.push({
-        x:Math.random()*canvas.width,
-        y:Math.random()*canvas.height,
-        r:Math.random()*2,
-        dx:(Math.random()-0.5)*0.5,
-        dy:(Math.random()-0.5)*0.5
-    });
-}
-
-function animate(){
-    ctx.clearRect(0,0,canvas.width,canvas.height);
-
-    particles.forEach(p=>{
-        p.x += p.dx;
-        p.y += p.dy;
-
-        if(p.x<0||p.x>canvas.width)p.dx*=-1;
-        if(p.y<0||p.y>canvas.height)p.dy*=-1;
-
-        ctx.beginPath();
-        ctx.arc(p.x,p.y,p.r,0,Math.PI*2);
-        ctx.fillStyle="#00d4ff55";
-        ctx.fill();
-    });
-
-    requestAnimationFrame(animate);
-}
-
-animate();
-
-</script>
 
 </body>
 </html>
