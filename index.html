@@ -3,165 +3,454 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Allah Rakha | Portfolio</title>
+<title>AR Dev | Unity Game Developer</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
 <style>
+
 *{
-margin:0;
-padding:0;
-box-sizing:border-box;
-font-family:system-ui, Arial;
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
 }
 
 body{
-background:#111;
-color:white;
+    background:#0d1117;
+    color:white;
 }
 
-/* MAIN LAYOUT */
+html{
+    scroll-behavior:smooth;
+}
+
 .container{
-display:flex;
-height:100vh;
+    width:90%;
+    max-width:1200px;
+    margin:auto;
 }
 
-/* LEFT IMAGE SIDE */
-.left{
-flex:1;
-background:#000;
-display:flex;
-align-items:center;
-justify-content:center;
-position:relative;
+header{
+    position:fixed;
+    top:0;
+    width:100%;
+    background:rgba(0,0,0,.9);
+    backdrop-filter:blur(10px);
+    z-index:1000;
 }
 
-.left img{
-width:90%;
-height:90%;
-object-fit:cover;
-border-radius:20px;
-box-shadow:0 0 40px rgba(0,0,0,0.7);
+nav{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:20px 0;
 }
 
-/* RIGHT CONTENT */
-.right{
-flex:1;
-display:flex;
-align-items:center;
-padding:60px;
-background:#111;
+.logo{
+    font-size:28px;
+    font-weight:700;
+    color:#00d4ff;
 }
 
-.content h4{
-color:#fbbf24;
-letter-spacing:2px;
+nav ul{
+    display:flex;
+    list-style:none;
+    gap:25px;
 }
 
-.content h1{
-font-size:50px;
-margin-top:10px;
+nav a{
+    text-decoration:none;
+    color:white;
+    transition:.3s;
 }
 
-.content h1 span{
-color:#fbbf24;
+nav a:hover{
+    color:#00d4ff;
 }
 
-.content h2{
-font-size:28px;
-margin-top:10px;
-color:#e5e5e5;
+.hero{
+    min-height:100vh;
+    display:flex;
+    align-items:center;
+    text-align:center;
+    background:
+    linear-gradient(rgba(0,0,0,.6),rgba(0,0,0,.6)),
+    url('https://images.unsplash.com/photo-1511512578047-dfb367046420?w=1600');
+    background-size:cover;
+    background-position:center;
 }
 
-.content p{
-margin-top:15px;
-color:#aaa;
-max-width:500px;
-line-height:1.6;
+.hero-content{
+    width:100%;
 }
 
-/* BUTTON */
+.hero h1{
+    font-size:60px;
+}
+
+.hero h1 span{
+    color:#00d4ff;
+}
+
+.hero p{
+    margin-top:20px;
+    font-size:20px;
+    color:#ddd;
+}
+
 .btn{
-display:inline-block;
-margin-top:25px;
-padding:12px 25px;
-background:#fbbf24;
-color:black;
-border-radius:30px;
-text-decoration:none;
-font-weight:bold;
-transition:0.3s;
+    display:inline-block;
+    margin-top:30px;
+    padding:14px 30px;
+    background:#00d4ff;
+    color:black;
+    border-radius:8px;
+    text-decoration:none;
+    font-weight:600;
 }
 
-.btn:hover{
-transform:scale(1.05);
+section{
+    padding:100px 0;
 }
 
-/* RIGHT FLOAT MENU (like image) */
-.menu{
-position:fixed;
-right:20px;
-top:50%;
-transform:translateY(-50%);
-display:flex;
-flex-direction:column;
-gap:15px;
+.section-title{
+    text-align:center;
+    margin-bottom:50px;
+    font-size:40px;
+    color:#00d4ff;
 }
 
-.menu div{
-width:45px;
-height:45px;
-border-radius:50%;
-background:#222;
-display:flex;
-align-items:center;
-justify-content:center;
-cursor:pointer;
-transition:0.3s;
+.about{
+    text-align:center;
 }
 
-.menu div:hover{
-background:#fbbf24;
-color:black;
+.skills-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:20px;
 }
+
+.skill-card{
+    background:#161b22;
+    padding:25px;
+    border-radius:12px;
+    transition:.3s;
+}
+
+.skill-card:hover{
+    transform:translateY(-5px);
+}
+
+.skill-card h3{
+    margin-bottom:15px;
+    color:#00d4ff;
+}
+
+.projects-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(350px,1fr));
+    gap:30px;
+}
+
+.project-card{
+    background:#161b22;
+    border-radius:15px;
+    overflow:hidden;
+}
+
+.project-card img{
+    width:100%;
+    height:220px;
+    object-fit:cover;
+}
+
+.project-content{
+    padding:20px;
+}
+
+.project-content h3{
+    margin-bottom:10px;
+    color:#00d4ff;
+}
+
+.project-content p{
+    color:#ccc;
+}
+
+.project-links{
+    margin-top:20px;
+}
+
+.project-links a{
+    display:inline-block;
+    margin-right:10px;
+    padding:10px 15px;
+    background:#00d4ff;
+    color:black;
+    text-decoration:none;
+    border-radius:6px;
+    font-weight:600;
+}
+
+.services{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:20px;
+}
+
+.service{
+    background:#161b22;
+    padding:25px;
+    border-radius:12px;
+}
+
+.contact{
+    text-align:center;
+}
+
+.contact a{
+    display:block;
+    margin:10px;
+    color:#00d4ff;
+    text-decoration:none;
+}
+
+footer{
+    text-align:center;
+    padding:30px;
+    background:#000;
+}
+
+@media(max-width:768px){
+
+.hero h1{
+    font-size:40px;
+}
+
+nav{
+    flex-direction:column;
+    gap:15px;
+}
+
+nav ul{
+    flex-wrap:wrap;
+    justify-content:center;
+}
+
+}
+
 </style>
-
 </head>
 
 <body>
 
+<header>
 <div class="container">
+<nav>
+<div class="logo">AR Dev</div>
 
-<!-- LEFT IMAGE -->
-<div class="left">
-<img src="myphoto.jpg" alt="profile">
+<ul>
+<li><a href="#about">About</a></li>
+<li><a href="#skills">Skills</a></li>
+<li><a href="#projects">Projects</a></li>
+<li><a href="#services">Services</a></li>
+<li><a href="#contact">Contact</a></li>
+</ul>
+
+</nav>
 </div>
+</header>
 
-<!-- RIGHT CONTENT -->
-<div class="right">
-<div class="content">
+<section class="hero">
+<div class="container hero-content">
 
-<h4>— I'M ALLAH RAKHA</h4>
-<h1>UNITY <span>DEVELOPER</span></h1>
-
-<h2>Game Developer & C# Programmer</h2>
+<h1>Hi, I'm <span>AR Dev</span></h1>
 
 <p>
-I build modern 2D & 3D Unity games with smooth gameplay, UI systems and interactive mechanics.
+Unity Game Developer specializing in Mobile Games,
+Gameplay Programming, Ads Integration,
+Optimization, and Publishing.
 </p>
 
-<a class="btn" href="#contact">HIRE ME</a>
+<a href="#projects" class="btn">View My Projects</a>
 
 </div>
+</section>
+
+<section id="about">
+<div class="container">
+
+<h2 class="section-title">About Me</h2>
+
+<div class="about">
+<p>
+I am a Unity Game Developer with experience building
+mobile games from concept to release.
+I specialize in gameplay systems, monetization,
+UI implementation, optimization, and publishing.
+</p>
+</div>
+
+</div>
+</section>
+
+<section id="skills">
+<div class="container">
+
+<h2 class="section-title">Skills</h2>
+
+<div class="skills-grid">
+
+<div class="skill-card">
+<h3>Game Engines</h3>
+<p>Unity 3D<br>Unity 6</p>
+</div>
+
+<div class="skill-card">
+<h3>Programming</h3>
+<p>C#<br>OOP<br>Game Architecture</p>
+</div>
+
+<div class="skill-card">
+<h3>Tools</h3>
+<p>GitHub<br>Firebase<br>AdMob<br>Visual Studio</p>
+</div>
+
+<div class="skill-card">
+<h3>Platforms</h3>
+<p>Android<br>WebGL<br>iOS</p>
 </div>
 
 </div>
 
-<!-- SIDE MENU -->
-<div class="menu">
-<div>🏠</div>
-<div>👤</div>
-<div>💼</div>
-<div>✉️</div>
 </div>
+</section>
+
+<section id="projects">
+<div class="container">
+
+<h2 class="section-title">Featured Projects</h2>
+
+<div class="projects-grid">
+
+<div class="project-card">
+
+<img src="https://images.unsplash.com/photo-1542751371-adc38448a05e?w=800">
+
+<div class="project-content">
+
+<h3>Turbo Dismount Clone</h3>
+
+<p>
+Vehicle controller, ragdoll system,
+damage system, rewards, ads,
+shop system and level selection.
+</p>
+
+<div class="project-links">
+<a href="#">APK</a>
+<a href="#">Video</a>
+<a href="#">GitHub</a>
+</div>
+
+</div>
+
+</div>
+
+<div class="project-card">
+
+<img src="https://images.unsplash.com/photo-1511882150382-421056c89033?w=800">
+
+<div class="project-content">
+
+<h3>Prison Escape Game</h3>
+
+<p>
+AI enemies, inventory system,
+missions, checkpoints and rewards.
+</p>
+
+<div class="project-links">
+<a href="#">APK</a>
+<a href="#">Video</a>
+<a href="#">GitHub</a>
+</div>
+
+</div>
+
+</div>
+
+<div class="project-card">
+
+<img src="https://images.unsplash.com/photo-1550745165-9bc0b252726f?w=800">
+
+<div class="project-content">
+
+<h3>BrookTopia Haven</h3>
+
+<p>
+Open world gameplay, vehicles,
+inventory, quests and multiplayer ready.
+</p>
+
+<div class="project-links">
+<a href="#">APK</a>
+<a href="#">Video</a>
+<a href="#">GitHub</a>
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+</section>
+
+<section id="services">
+<div class="container">
+
+<h2 class="section-title">Services</h2>
+
+<div class="services">
+
+<div class="service">✓ Complete Mobile Game Development</div>
+<div class="service">✓ Unity Gameplay Programming</div>
+<div class="service">✓ Bug Fixing</div>
+<div class="service">✓ AdMob Integration</div>
+<div class="service">✓ IAP Integration</div>
+<div class="service">✓ Firebase Integration</div>
+<div class="service">✓ UI Systems</div>
+<div class="service">✓ Google Play Publishing</div>
+
+</div>
+
+</div>
+</section>
+
+<section id="contact">
+<div class="container">
+
+<h2 class="section-title">Contact Me</h2>
+
+<div class="contact">
+
+<a href="mailto:your@email.com">Email</a>
+<a href="#">WhatsApp</a>
+<a href="#">LinkedIn</a>
+<a href="#">GitHub</a>
+<a href="#">Resume PDF</a>
+
+</div>
+
+</div>
+</section>
+
+<footer>
+© 2026 AR Dev | Unity Game Developer
+</footer>
 
 </body>
 </html>
