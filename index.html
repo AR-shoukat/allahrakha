@@ -3,13 +3,13 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>AR Dev | Unity Game Developer</title>
+<title>AR Dev | AAA Game Developer</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
 <style>
 
-/* ===== RESET ===== */
+/* ================= BASE ================= */
 *{
     margin:0;
     padding:0;
@@ -18,35 +18,41 @@
 }
 
 body{
-    background:#0a0f1a;
+    background:#05070f;
     color:white;
     overflow-x:hidden;
 }
 
-/* ===== GAMING BACKGROUND ===== */
-body::before{
-    content:"";
+/* ================= PARTICLES BACKGROUND ================= */
+#particles{
     position:fixed;
-    top:0;
-    left:0;
     width:100%;
     height:100%;
-    background:
-        radial-gradient(circle at 20% 20%, #00d4ff33, transparent 40%),
-        radial-gradient(circle at 80% 80%, #ff00ff22, transparent 40%),
-        radial-gradient(circle at 50% 50%, #00ff8822, transparent 50%);
     z-index:-1;
+    top:0;
+    left:0;
 }
 
-/* ===== NAVBAR ===== */
+/* ================= LAYOUT ================= */
+.container{
+    width:90%;
+    max-width:1200px;
+    margin:auto;
+}
+
+section{
+    padding:140px 0;
+}
+
+/* ================= NAV ================= */
 header{
     position:fixed;
     top:0;
     width:100%;
-    background:rgba(0,0,0,.6);
-    backdrop-filter:blur(12px);
+    background:rgba(10,15,25,0.6);
+    backdrop-filter:blur(14px);
+    border-bottom:1px solid #00d4ff22;
     z-index:1000;
-    border-bottom:1px solid #00d4ff33;
 }
 
 nav{
@@ -56,37 +62,29 @@ nav{
     padding:18px 0;
 }
 
-.container{
-    width:90%;
-    max-width:1200px;
-    margin:auto;
-}
-
 .logo{
     font-size:28px;
-    font-weight:700;
+    font-weight:800;
     color:#00d4ff;
-    text-shadow:0 0 10px #00d4ff;
 }
 
 nav ul{
     display:flex;
-    list-style:none;
     gap:25px;
+    list-style:none;
 }
 
 nav a{
+    color:#ddd;
     text-decoration:none;
-    color:white;
     transition:0.3s;
 }
 
 nav a:hover{
     color:#00d4ff;
-    text-shadow:0 0 10px #00d4ff;
 }
 
-/* ===== HERO ===== */
+/* ================= HERO ================= */
 .hero{
     min-height:100vh;
     display:flex;
@@ -97,7 +95,6 @@ nav a:hover{
 
 .hero h1{
     font-size:65px;
-    text-shadow:0 0 20px #00d4ff;
 }
 
 .hero h1 span{
@@ -106,65 +103,49 @@ nav a:hover{
 
 .hero p{
     margin-top:20px;
-    font-size:20px;
-    color:#ccc;
+    color:#cbd5e1;
 }
 
+/* ================= BUTTON ================= */
 .btn{
     display:inline-block;
     margin-top:30px;
-    padding:14px 30px;
-    background:linear-gradient(45deg,#00d4ff,#0066ff);
-    color:black;
-    border-radius:10px;
-    text-decoration:none;
+    padding:14px 32px;
+    border-radius:12px;
+    background:linear-gradient(135deg,#00d4ff,#0066ff);
+    color:#001018;
     font-weight:700;
+    text-decoration:none;
     transition:0.3s;
-    box-shadow:0 0 20px #00d4ff44;
 }
 
 .btn:hover{
-    transform:scale(1.1);
-    box-shadow:0 0 30px #00d4ff99;
+    transform:translateY(-3px);
+    box-shadow:0 0 25px #00d4ff55;
 }
 
-/* ===== SECTIONS ===== */
-section{
-    padding:120px 0;
-}
-
-/* ===== TITLE ===== */
-.section-title{
-    text-align:center;
-    font-size:42px;
-    margin-bottom:60px;
-    color:#00d4ff;
-    text-shadow:0 0 10px #00d4ff55;
-}
-
-/* ===== CARDS ===== */
-.card{
-    background:rgba(255,255,255,0.05);
-    border:1px solid #00d4ff22;
-    border-radius:15px;
-    padding:25px;
-    backdrop-filter:blur(10px);
-    transition:0.4s;
-}
-
-.card:hover{
-    transform:translateY(-10px) scale(1.02);
-    box-shadow:0 0 25px #00d4ff33;
-}
-
-/* ===== GRID ===== */
+/* ================= CARDS ================= */
 .grid{
     display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
     gap:25px;
 }
 
-/* ===== PROJECT ===== */
+.card{
+    background:rgba(255,255,255,0.05);
+    border:1px solid #00d4ff1a;
+    border-radius:16px;
+    padding:25px;
+    backdrop-filter:blur(10px);
+    transition:0.5s;
+}
+
+.card:hover{
+    transform:translateY(-10px);
+    box-shadow:0 0 25px #00d4ff22;
+}
+
+/* ================= PROJECT ================= */
 .project img{
     width:100%;
     height:200px;
@@ -175,9 +156,9 @@ section{
 
 .project h3{
     color:#00d4ff;
-    margin-bottom:10px;
 }
 
+/* ================= LINKS ================= */
 .links{
     display:flex;
     gap:10px;
@@ -188,22 +169,17 @@ section{
     flex:1;
     text-align:center;
     padding:10px;
+    border-radius:10px;
     background:#00d4ff;
-    color:black;
-    border-radius:8px;
+    color:#001018;
     text-decoration:none;
     font-weight:600;
-    transition:0.3s;
 }
 
-.links a:hover{
-    background:#00a8cc;
-}
-
-/* ===== SCROLL ANIMATION ===== */
+/* ================= SCROLL ANIMATION ================= */
 .hidden{
     opacity:0;
-    transform:translateY(50px);
+    transform:translateY(60px);
     transition:all 0.8s ease;
 }
 
@@ -212,19 +188,33 @@ section{
     transform:translateY(0);
 }
 
-/* ===== FOOTER ===== */
-footer{
-    text-align:center;
-    padding:40px;
-    background:#000;
-    margin-top:50px;
-    color:#aaa;
+/* ================= WHATSAPP FLOAT BUTTON ================= */
+.whatsapp{
+    position:fixed;
+    bottom:20px;
+    right:20px;
+    background:#25D366;
+    width:60px;
+    height:60px;
+    border-radius:50%;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:30px;
+    box-shadow:0 0 20px #25D36655;
+    text-decoration:none;
+    z-index:999;
+    transition:0.3s;
 }
 
-/* ===== RESPONSIVE ===== */
+.whatsapp:hover{
+    transform:scale(1.1);
+}
+
+/* ================= RESPONSIVE ================= */
 @media(max-width:768px){
 .hero h1{font-size:40px;}
-nav{flex-direction:column;gap:10px;}
+nav{flex-direction:column;}
 nav ul{flex-wrap:wrap;justify-content:center;}
 }
 
@@ -232,6 +222,8 @@ nav ul{flex-wrap:wrap;justify-content:center;}
 </head>
 
 <body>
+
+<canvas id="particles"></canvas>
 
 <header>
 <div class="container">
@@ -250,69 +242,55 @@ nav ul{flex-wrap:wrap;justify-content:center;}
 <section class="hero">
 <div class="container">
 <h1>Hi, I'm <span>AR Dev</span></h1>
-<p>Unity Game Developer | Mobile Games | Ads | Systems</p>
+<p>Unity Game Developer | Systems | Monetization | AAA Mobile Games</p>
 <a href="#projects" class="btn">View My Work</a>
 </div>
 </section>
 
 <section id="about" class="hidden">
 <div class="container">
-<h2 class="section-title">About Me</h2>
+<h2>About Me</h2>
 <div class="card">
-I am a Unity Game Developer specializing in mobile games,
-gameplay systems, monetization (Ads + IAP), and optimization.
+Unity Game Developer building high-performance mobile games with advanced systems and monetization.
 </div>
 </div>
 </section>
 
 <section id="skills" class="hidden">
 <div class="container">
-<h2 class="section-title">Skills</h2>
+<h2>Skills</h2>
 
 <div class="grid">
-
 <div class="card">Unity 3D / Unity 6</div>
 <div class="card">C# Programming</div>
 <div class="card">AdMob / IAP</div>
-<div class="card">Firebase Backend</div>
-
+<div class="card">Firebase</div>
 </div>
+
 </div>
 </section>
 
 <section id="projects" class="hidden">
 <div class="container">
-<h2 class="section-title">Projects</h2>
+<h2>Projects</h2>
 
 <div class="grid">
 
 <div class="card project">
 <img src="https://images.unsplash.com/photo-1511512578047-dfb367046420?auto=format&fit=crop&w=1200&q=80">
 <h3>Turbo Dismount Clone</h3>
-<p>Vehicle physics, ragdoll system, damage system.</p>
 <div class="links">
-<a href="#">APK</a>
-<a href="#">Video</a>
+<a href="#" class="hover-sound">APK</a>
+<a href="#" class="hover-sound">Video</a>
 </div>
 </div>
 
 <div class="card project">
 <img src="https://images.unsplash.com/photo-1508873699372-7aeab60b44ab?auto=format&fit=crop&w=1200&q=80">
 <h3>Prison Escape</h3>
-<p>AI enemies, missions, inventory system.</p>
 <div class="links">
-<a href="#">APK</a>
-<a href="#">Video</a>
-</div>
-</div>
-
-<div class="card project">
-<img src="https://images.unsplash.com/photo-1550745165-9bc0b252726f?auto=format&fit=crop&w=1200&q=80">
-<h3>BrookTopia Haven</h3>
-<p>Open world, quests, vehicles system.</p>
-<div class="links">
-<a href="#">APK</a>
-<a href="#">Video</a>
+<a href="#" class="hover-sound">APK</a>
+<a href="#" class="hover-sound">Video</a>
 </div>
 </div>
 
@@ -322,32 +300,84 @@ gameplay systems, monetization (Ads + IAP), and optimization.
 
 <section id="contact" class="hidden">
 <div class="container">
-<h2 class="section-title">Contact</h2>
-
+<h2>Contact</h2>
 <div class="card">
-<p>Email: your@email.com</p>
-<p>GitHub: github.com</p>
-<p>WhatsApp: +92XXXXXXXXXX</p>
+Email: your@email.com
 </div>
-
 </div>
 </section>
 
-<footer>
-© 2026 AR Dev | Unity Game Developer
-</footer>
+<!-- WHATSAPP BUTTON -->
+<a class="whatsapp" href="https://wa.me/923000000000" target="_blank">💬</a>
 
-<!-- ===== SCROLL ANIMATION SCRIPT ===== -->
+<!-- SOUND -->
+<audio id="hoverSound" src="https://www.soundjay.com/buttons/sounds/button-16.mp3" preload="auto"></audio>
+
 <script>
-const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
+
+/* ================= SCROLL ANIMATION ================= */
+const observer = new IntersectionObserver(entries=>{
+    entries.forEach(entry=>{
         if(entry.isIntersecting){
             entry.target.classList.add("show");
         }
     });
 });
 
-document.querySelectorAll(".hidden").forEach((el) => observer.observe(el));
+document.querySelectorAll(".hidden").forEach(el=>{
+    observer.observe(el);
+});
+
+/* ================= HOVER SOUND ================= */
+const sound = document.getElementById("hoverSound");
+
+document.querySelectorAll(".hover-sound").forEach(btn=>{
+    btn.addEventListener("mouseenter", ()=>{
+        sound.currentTime = 0;
+        sound.play();
+    });
+});
+
+/* ================= PARTICLES SYSTEM ================= */
+const canvas = document.getElementById("particles");
+const ctx = canvas.getContext("2d");
+
+canvas.width = window.innerWidth;
+canvas.height = window.innerHeight;
+
+let particles = [];
+
+for(let i=0;i<80;i++){
+    particles.push({
+        x:Math.random()*canvas.width,
+        y:Math.random()*canvas.height,
+        r:Math.random()*2,
+        dx:(Math.random()-0.5)*0.5,
+        dy:(Math.random()-0.5)*0.5
+    });
+}
+
+function animate(){
+    ctx.clearRect(0,0,canvas.width,canvas.height);
+
+    particles.forEach(p=>{
+        p.x += p.dx;
+        p.y += p.dy;
+
+        if(p.x<0||p.x>canvas.width)p.dx*=-1;
+        if(p.y<0||p.y>canvas.height)p.dy*=-1;
+
+        ctx.beginPath();
+        ctx.arc(p.x,p.y,p.r,0,Math.PI*2);
+        ctx.fillStyle="#00d4ff55";
+        ctx.fill();
+    });
+
+    requestAnimationFrame(animate);
+}
+
+animate();
+
 </script>
 
 </body>
