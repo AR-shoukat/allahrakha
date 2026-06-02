@@ -3,42 +3,44 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Allah Rakha | Game Developer</title>
+<title>Allah Rakha | Unity Developer</title>
 
 <style>
 *{
 margin:0;
 padding:0;
 box-sizing:border-box;
-font-family:Arial;
+font-family:system-ui, Arial;
 }
 
 body{
-background:#0b1220;
-color:white;
-scroll-behavior:smooth;
+background:#0a0f1c;
+color:#e5e7eb;
+line-height:1.6;
 }
 
-/* NAVBAR */
-nav{
+/* NAV */
+header{
 display:flex;
 justify-content:space-between;
 align-items:center;
-padding:20px 50px;
-background:rgba(0,0,0,0.4);
-backdrop-filter:blur(10px);
+padding:20px 8%;
 position:sticky;
 top:0;
-z-index:1000;
+background:rgba(10,15,28,0.8);
+backdrop-filter:blur(10px);
+border-bottom:1px solid rgba(255,255,255,0.05);
 }
 
-nav h1{
+.logo{
 color:#38bdf8;
+font-weight:bold;
+font-size:20px;
 }
 
 nav a{
-color:white;
-margin:0 10px;
+color:#cbd5e1;
+margin:0 12px;
 text-decoration:none;
 transition:0.3s;
 }
@@ -49,55 +51,77 @@ color:#38bdf8;
 
 /* HERO */
 .hero{
-height:90vh;
-display:flex;
-flex-direction:column;
-justify-content:center;
-align-items:center;
-text-align:center;
-background:linear-gradient(135deg,#0f172a,#1e3a8a,#0f172a);
-animation:bgMove 6s infinite alternate;
+padding:120px 8%;
+text-align:left;
 }
 
 .hero h1{
-font-size:60px;
-animation:fadeDown 1s ease;
+font-size:52px;
+color:white;
+}
+
+.hero span{
+color:#38bdf8;
 }
 
 .hero p{
-font-size:22px;
-color:#cbd5e1;
-margin-top:10px;
+margin-top:15px;
+font-size:18px;
+color:#94a3b8;
+max-width:600px;
+}
+
+.buttons{
+margin-top:25px;
 }
 
 .btn{
-margin-top:20px;
-padding:12px 30px;
-background:#38bdf8;
-color:black;
-border-radius:30px;
+display:inline-block;
+padding:12px 22px;
+margin-right:10px;
+border-radius:8px;
 text-decoration:none;
+font-weight:500;
 transition:0.3s;
 }
 
-.btn:hover{
-transform:scale(1.1);
-background:#0ea5e9;
+.primary{
+background:#38bdf8;
+color:#0a0f1c;
+}
+
+.primary:hover{
+transform:translateY(-3px);
+}
+
+.secondary{
+border:1px solid #38bdf8;
+color:#38bdf8;
+}
+
+.secondary:hover{
+background:#38bdf8;
+color:#0a0f1c;
 }
 
 /* SECTIONS */
 section{
-padding:80px 10%;
-text-align:center;
+padding:80px 8%;
 }
 
 h2{
-font-size:35px;
-margin-bottom:30px;
+font-size:28px;
+margin-bottom:20px;
 color:#38bdf8;
 }
 
-/* CARDS */
+/* ABOUT */
+.about{
+max-width:700px;
+color:#cbd5e1;
+}
+
+/* PROJECTS */
 .grid{
 display:grid;
 grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
@@ -105,51 +129,51 @@ gap:20px;
 }
 
 .card{
-background:rgba(255,255,255,0.05);
+background:#111827;
 padding:20px;
-border-radius:15px;
+border-radius:10px;
+border:1px solid rgba(255,255,255,0.05);
 transition:0.3s;
-border:1px solid rgba(255,255,255,0.1);
 }
 
 .card:hover{
-transform:translateY(-10px);
-background:rgba(56,189,248,0.1);
+transform:translateY(-5px);
+border-color:#38bdf8;
 }
 
 /* SKILLS */
-.skill{
+.skills span{
 display:inline-block;
-padding:10px 15px;
 margin:5px;
-background:#1e293b;
+padding:8px 14px;
+background:#111827;
+border:1px solid rgba(255,255,255,0.05);
 border-radius:20px;
+font-size:14px;
+}
+
+/* CONTACT */
+.contact-box{
+background:#111827;
+padding:20px;
+border-radius:10px;
+border:1px solid rgba(255,255,255,0.05);
 }
 
 /* FOOTER */
 footer{
-padding:20px;
 text-align:center;
-background:#020617;
-color:#94a3b8;
-margin-top:50px;
-}
-
-/* ANIMATIONS */
-@keyframes fadeDown{
-from{opacity:0;transform:translateY(-50px);}
-to{opacity:1;transform:translateY(0);}
-}
-
-@keyframes bgMove{
-from{filter:hue-rotate(0deg);}
-to{filter:hue-rotate(20deg);}
+padding:20px;
+color:#64748b;
+border-top:1px solid rgba(255,255,255,0.05);
+margin-top:40px;
 }
 
 /* RESPONSIVE */
 @media(max-width:768px){
-.hero h1{font-size:40px;}
-nav{flex-direction:column;}
+.hero h1{font-size:36px;}
+header{flex-direction:column;}
+nav{margin-top:10px;}
 }
 </style>
 
@@ -157,61 +181,79 @@ nav{flex-direction:column;}
 
 <body>
 
+<header>
+<div class="logo">AR Developer</div>
 <nav>
-<h1>Allah Rakha</h1>
-<div>
 <a href="#about">About</a>
 <a href="#projects">Projects</a>
 <a href="#skills">Skills</a>
 <a href="#contact">Contact</a>
-</div>
 </nav>
+</header>
 
-<div class="hero">
-<h1>Hi, I'm Allah Rakha 🎮</h1>
-<p>Unity Game Developer | C# Programmer</p>
-<a class="btn" href="#projects">View Projects</a>
+<section class="hero">
+<h1>Hi, I'm <span>Allah Rakha</span></h1>
+<p>Unity Game Developer specializing in 2D/3D games, C# programming, and interactive gameplay systems.</p>
+
+<div class="buttons">
+<a class="btn primary" href="#projects">View Work</a>
+<a class="btn secondary" href="#contact">Hire Me</a>
 </div>
+</section>
 
 <section id="about">
 <h2>About Me</h2>
-<div class="card">
-I am a Unity Game Developer who creates 2D and 3D games using C#. I love building interactive and fun gaming experiences.
-</div>
+<p class="about">
+I am a passionate Unity developer who builds engaging and optimized games.
+I focus on gameplay mechanics, UI systems, and smooth player experience.
+</p>
 </section>
 
 <section id="projects">
 <h2>Projects</h2>
 <div class="grid">
 
-<div class="card">🎮 Car Racing Game</div>
-<div class="card">🔫 FPS Shooting Game</div>
-<div class="card">🧩 Puzzle Adventure Game</div>
-<div class="card">🏃 Endless Runner Game</div>
+<div class="card">
+<h3>Car Racing Game</h3>
+<p>High-speed racing game with physics-based controls.</p>
+</div>
+
+<div class="card">
+<h3>FPS Shooter</h3>
+<p>Multiplayer shooting game with AI enemies.</p>
+</div>
+
+<div class="card">
+<h3>Puzzle Game</h3>
+<p>Brain training puzzle game with levels.</p>
+</div>
 
 </div>
 </section>
 
 <section id="skills">
 <h2>Skills</h2>
-<span class="skill">Unity</span>
-<span class="skill">C#</span>
-<span class="skill">Game Design</span>
-<span class="skill">3D Modeling</span>
-<span class="skill">UI/UX</span>
+<div class="skills">
+<span>Unity</span>
+<span>C#</span>
+<span>Game Design</span>
+<span>3D Modeling</span>
+<span>UI/UX</span>
+<span>Problem Solving</span>
+</div>
 </section>
 
 <section id="contact">
 <h2>Contact</h2>
-<div class="card">
+<div class="contact-box">
 Email: your@email.com <br>
-Fiverr: coming soon <br>
+Fiverr: your profile link <br>
 GitHub: your profile
 </div>
 </section>
 
 <footer>
-© 2026 Allah Rakha | Built with ❤️ in GitHub Pages
+© 2026 Allah Rakha — Unity Game Developer
 </footer>
 
 </body>
