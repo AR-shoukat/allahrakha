@@ -63,7 +63,6 @@ nav ul{
 nav a{
     text-decoration:none;
     color:white;
-    transition:.3s;
 }
 
 nav a:hover{
@@ -78,7 +77,7 @@ nav a:hover{
     text-align:center;
     background:
     linear-gradient(rgba(0,0,0,.6),rgba(0,0,0,.6)),
-    url('https://images.unsplash.com/photo-1511512578047-dfb367046420?w=1600');
+    url('https://images.unsplash.com/photo-1511512578047-dfb367046420?auto=format&fit=crop&w=1600&q=80');
     background-size:cover;
     background-position:center;
 }
@@ -106,12 +105,6 @@ nav a:hover{
     border-radius:8px;
     text-decoration:none;
     font-weight:600;
-    transition:0.3s;
-}
-
-.btn:hover{
-    transform:scale(1.05);
-    background:#00b6dd;
 }
 
 /* SECTIONS */
@@ -137,11 +130,6 @@ section{
     background:#161b22;
     padding:25px;
     border-radius:12px;
-    transition:.3s;
-}
-
-.skill-card:hover{
-    transform:translateY(-5px);
 }
 
 /* PROJECTS */
@@ -155,17 +143,13 @@ section{
     background:#161b22;
     border-radius:15px;
     overflow:hidden;
-    transition:0.3s;
-}
-
-.project-card:hover{
-    transform:translateY(-8px);
 }
 
 .project-card img{
     width:100%;
     height:220px;
     object-fit:cover;
+    background:#222;
 }
 
 .project-content{
@@ -174,11 +158,6 @@ section{
 
 .project-content h3{
     color:#00d4ff;
-    margin-bottom:10px;
-}
-
-.project-content p{
-    color:#ccc;
 }
 
 .project-links{
@@ -193,13 +172,6 @@ section{
     color:black;
     text-decoration:none;
     border-radius:6px;
-    font-weight:600;
-    transition:0.3s;
-}
-
-.project-links a:hover{
-    background:#00b6dd;
-    transform:scale(1.05);
 }
 
 /* SERVICES */
@@ -216,16 +188,11 @@ section{
 }
 
 /* CONTACT */
-.contact{
-    text-align:center;
-}
-
 .contact a{
     display:block;
     margin:10px;
     color:#00d4ff;
     text-decoration:none;
-    font-weight:500;
 }
 
 /* FOOTER */
@@ -233,26 +200,13 @@ footer{
     text-align:center;
     padding:30px;
     background:#000;
-    margin-top:50px;
 }
 
 /* RESPONSIVE */
 @media(max-width:768px){
-
-.hero h1{
-    font-size:40px;
-}
-
-nav{
-    flex-direction:column;
-    gap:10px;
-}
-
-nav ul{
-    flex-wrap:wrap;
-    justify-content:center;
-}
-
+.hero h1{font-size:40px;}
+nav{flex-direction:column;gap:10px;}
+nav ul{flex-wrap:wrap;justify-content:center;}
 }
 
 </style>
@@ -263,7 +217,6 @@ nav ul{
 <header>
 <div class="container">
 <nav>
-
 <div class="logo">AR Dev</div>
 
 <ul>
@@ -280,59 +233,30 @@ nav ul{
 
 <section class="hero">
 <div class="container">
-
 <h1>Hi, I'm <span>AR Dev</span></h1>
-
-<p>
-Unity Game Developer specializing in Mobile Games,
-Gameplay Programming, Ads Integration and Optimization.
-</p>
-
-<a href="#projects" class="btn">View My Projects</a>
-
+<p>Unity Game Developer specializing in Mobile Games and Systems</p>
+<a href="#projects" class="btn">View Projects</a>
 </div>
 </section>
 
 <section id="about">
 <div class="container">
-
 <h2 class="section-title">About Me</h2>
-
-<p style="text-align:center;color:#ccc;max-width:800px;margin:auto;">
-I am a Unity Game Developer with experience building mobile games from concept to release.
-I specialize in gameplay systems, monetization, UI systems, optimization, and publishing games on Google Play Store.
+<p style="text-align:center;color:#ccc;">
+Unity Game Developer building mobile games, systems, and monetization features.
 </p>
-
 </div>
 </section>
 
 <section id="skills">
 <div class="container">
-
 <h2 class="section-title">Skills</h2>
 
 <div class="skills-grid">
-
-<div class="skill-card">
-<h3>Game Engines</h3>
-<p>Unity 3D<br>Unity 6</p>
-</div>
-
-<div class="skill-card">
-<h3>Programming</h3>
-<p>C#<br>OOP<br>Game Architecture</p>
-</div>
-
-<div class="skill-card">
-<h3>Tools</h3>
-<p>GitHub<br>Firebase<br>AdMob<br>Visual Studio</p>
-</div>
-
-<div class="skill-card">
-<h3>Platforms</h3>
-<p>Android<br>iOS<br>WebGL</p>
-</div>
-
+<div class="skill-card">Unity 3D / Unity 6</div>
+<div class="skill-card">C# Programming</div>
+<div class="skill-card">AdMob / IAP</div>
+<div class="skill-card">Firebase / Backend</div>
 </div>
 
 </div>
@@ -346,71 +270,57 @@ I specialize in gameplay systems, monetization, UI systems, optimization, and pu
 <div class="projects-grid">
 
 <div class="project-card">
-<img src="https://images.unsplash.com/photo-1542751371-adc38448a05e?w=800">
-
+<img src="https://images.unsplash.com/photo-1511512578047-dfb367046420?auto=format&fit=crop&w=1200&q=80">
 <div class="project-content">
 <h3>Turbo Dismount Clone</h3>
-<p>Vehicle physics, ragdoll system, damage system, shop & ads integration.</p>
-
+<p>Vehicle physics, ragdoll, damage system</p>
 <div class="project-links">
-<a href="https://example.com/apk" target="_blank">APK</a>
-<a href="https://youtube.com" target="_blank">Video</a>
-<a href="https://github.com" target="_blank">GitHub</a>
+<a href="#">APK</a>
+<a href="#">Video</a>
+<a href="#">GitHub</a>
 </div>
 </div>
 </div>
 
 <div class="project-card">
-<img src="https://images.unsplash.com/photo-1511882150382-421056c89033?w=800">
-
+<img src="https://images.unsplash.com/photo-1508873699372-7aeab60b44ab?auto=format&fit=crop&w=1200&q=80">
 <div class="project-content">
 <h3>Prison Escape Game</h3>
-<p>AI enemies, missions, inventory system and checkpoints.</p>
-
+<p>AI enemies, missions, inventory system</p>
 <div class="project-links">
-<a href="#" target="_blank">APK</a>
-<a href="#" target="_blank">Video</a>
-<a href="#" target="_blank">GitHub</a>
+<a href="#">APK</a>
+<a href="#">Video</a>
+<a href="#">GitHub</a>
 </div>
 </div>
 </div>
 
 <div class="project-card">
-<img src="https://images.unsplash.com/photo-1550745165-9bc0b252726f?w=800">
-
+<img src="https://images.unsplash.com/photo-1550745165-9bc0b252726f?auto=format&fit=crop&w=1200&q=80">
 <div class="project-content">
 <h3>BrookTopia Haven</h3>
-<p>Open world system, vehicles, quests and multiplayer base.</p>
-
+<p>Open world, vehicles, quests system</p>
 <div class="project-links">
-<a href="#" target="_blank">APK</a>
-<a href="#" target="_blank">Video</a>
-<a href="#" target="_blank">GitHub</a>
+<a href="#">APK</a>
+<a href="#">Video</a>
+<a href="#">GitHub</a>
 </div>
 </div>
 </div>
 
 </div>
-
 </div>
 </section>
 
 <section id="services">
 <div class="container">
-
 <h2 class="section-title">Services</h2>
 
 <div class="services">
-
-<div class="service">Complete Game Development</div>
-<div class="service">Unity Programming</div>
+<div class="service">Game Development</div>
 <div class="service">Bug Fixing</div>
-<div class="service">AdMob Integration</div>
-<div class="service">IAP Integration</div>
-<div class="service">Firebase Setup</div>
+<div class="service">Ad Integration</div>
 <div class="service">UI Systems</div>
-<div class="service">Play Store Publishing</div>
-
 </div>
 
 </div>
@@ -418,13 +328,11 @@ I specialize in gameplay systems, monetization, UI systems, optimization, and pu
 
 <section id="contact">
 <div class="container">
-
 <h2 class="section-title">Contact</h2>
 
 <div class="contact">
-<a href="mailto:your@email.com">Email Me</a>
+<a href="mailto:your@email.com">Email</a>
 <a href="#">WhatsApp</a>
-<a href="#">LinkedIn</a>
 <a href="#">GitHub</a>
 </div>
 
@@ -432,7 +340,7 @@ I specialize in gameplay systems, monetization, UI systems, optimization, and pu
 </section>
 
 <footer>
-© 2026 AR Dev | Unity Game Developer
+© 2026 AR Dev
 </footer>
 
 </body>
