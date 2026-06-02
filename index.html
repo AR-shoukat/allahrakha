@@ -1,27 +1,142 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>My Portfolio</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Allah Rakha - Portfolio</title>
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background: linear-gradient(135deg, #0f172a, #1e293b);
+    color: white;
+    text-align: center;
+}
+
+/* HERO SECTION */
+.hero {
+    padding: 100px 20px;
+    animation: fadeIn 2s ease-in-out;
+}
+
+.hero h1 {
+    font-size: 50px;
+    color: #38bdf8;
+    animation: slideDown 1s ease-in-out;
+}
+
+.hero h2 {
+    font-size: 25px;
+    color: #a5b4fc;
+    margin-top: 10px;
+}
+
+/* BUTTON */
+.btn {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 12px 25px;
+    background: #38bdf8;
+    color: black;
+    border-radius: 30px;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.btn:hover {
+    background: #0ea5e9;
+    transform: scale(1.1);
+}
+
+/* SECTIONS */
+.section {
+    padding: 60px 20px;
+}
+
+h3 {
+    font-size: 28px;
+    margin-bottom: 20px;
+    color: #38bdf8;
+}
+
+/* CARDS */
+.card {
+    background: rgba(255,255,255,0.1);
+    padding: 20px;
+    margin: 15px auto;
+    width: 80%;
+    border-radius: 15px;
+    transition: 0.3s;
+    backdrop-filter: blur(10px);
+}
+
+.card:hover {
+    transform: translateY(-10px);
+    background: rgba(255,255,255,0.2);
+}
+
+/* ANIMATIONS */
+@keyframes fadeIn {
+    from {opacity: 0;}
+    to {opacity: 1;}
+}
+
+@keyframes slideDown {
+    from {transform: translateY(-50px); opacity: 0;}
+    to {transform: translateY(0); opacity: 1;}
+}
+
+/* FOOTER */
+footer {
+    padding: 20px;
+    background: #0f172a;
+    margin-top: 40px;
+    font-size: 14px;
+    color: #94a3b8;
+}
+</style>
+
 </head>
-<body style="font-family:Arial; text-align:center;">
+<body>
 
-    <h1>Hi, I am Allah Rakha 👋</h1>
-    <h2>Unity Game Developer</h2>
+<div class="hero">
+    <h1>Hi, I'm Allah Rakha 👋</h1>
+    <h2>Unity Game Developer 🎮</h2>
+    <a class="btn" href="#projects">View My Work</a>
+</div>
 
-    <hr>
-
+<div class="section" id="about">
     <h3>About Me</h3>
-    <p>I make games in Unity using C#.</p>
+    <div class="card">
+        I create fun and interactive games using Unity and C#. I love building 3D & 2D games.
+    </div>
+</div>
 
-    <h3>My Projects</h3>
-    <ul style="list-style:none;">
-        <li>🎮 Car Racing Game</li>
-        <li>🎮 Shooting Game</li>
-        <li>🎮 Puzzle Game</li>
-    </ul>
+<div class="section" id="projects">
+    <h3>Projects</h3>
 
+    <div class="card">🎮 Car Racing Game</div>
+    <div class="card">🔫 Shooting Game</div>
+    <div class="card">🧩 Puzzle Game</div>
+</div>
+
+<div class="section">
     <h3>Contact</h3>
-    <p>Email: your@email.com</p>
+    <div class="card">
+        Email: your@email.com <br>
+        Fiverr: coming soon
+    </div>
+</div>
+
+<footer>
+    © 2026 Allah Rakha | Unity Game Developer
+</footer>
 
 </body>
 </html>
