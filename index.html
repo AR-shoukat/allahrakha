@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Allah Rakha | Portfolio</title>
+<title>Portfolio - Allah Rakha</title>
 
 <style>
 *{
@@ -14,113 +14,167 @@ font-family:system-ui, Arial;
 }
 
 body{
-background:#111;
-color:white;
-}
-
-/* MAIN LAYOUT */
-.container{
 display:flex;
-height:100vh;
+min-height:100vh;
+background:#f5f5f5;
 }
 
-/* LEFT IMAGE SIDE */
-.left{
-flex:1;
-background:#000;
+/* LEFT SIDEBAR */
+.sidebar{
+width:260px;
+background:#0f172a;
+color:white;
+padding:30px 20px;
+position:fixed;
+height:100%;
+}
+
+.profile{
+text-align:center;
+margin-bottom:30px;
+}
+
+.profile img{
+width:90px;
+height:90px;
+border-radius:50%;
+border:3px solid #38bdf8;
+}
+
+.profile h2{
+margin-top:10px;
+font-size:18px;
+}
+
+.profile p{
+font-size:12px;
+color:#94a3b8;
+}
+
+nav a{
+display:block;
+color:#cbd5e1;
+text-decoration:none;
+padding:10px;
+margin:5px 0;
+border-radius:6px;
+transition:0.3s;
+}
+
+nav a:hover{
+background:#38bdf8;
+color:black;
+}
+
+/* MAIN */
+.main{
+margin-left:260px;
+width:100%;
+}
+
+/* HERO */
+.hero{
+height:100vh;
+background:url('https://images.unsplash.com/photo-1521737604893-d14cc237f11d') center/cover;
 display:flex;
 align-items:center;
 justify-content:center;
 position:relative;
+color:white;
+text-align:center;
 }
 
-.left img{
-width:90%;
-height:90%;
-object-fit:cover;
-border-radius:20px;
-box-shadow:0 0 40px rgba(0,0,0,0.7);
+.hero::after{
+content:"";
+position:absolute;
+top:0;left:0;
+width:100%;height:100%;
+background:rgba(0,0,0,0.6);
 }
 
-/* RIGHT CONTENT */
-.right{
-flex:1;
-display:flex;
-align-items:center;
-padding:60px;
-background:#111;
+.hero-content{
+position:relative;
+z-index:1;
 }
 
-.content h4{
-color:#fbbf24;
-letter-spacing:2px;
-}
-
-.content h1{
+.hero h1{
 font-size:50px;
+}
+
+.hero span{
+color:#38bdf8;
+}
+
+.hero p{
 margin-top:10px;
+color:#ddd;
 }
 
-.content h1 span{
-color:#fbbf24;
+/* SECTIONS */
+section{
+padding:80px 10%;
+background:white;
 }
 
-.content h2{
+h2{
 font-size:28px;
-margin-top:10px;
-color:#e5e5e5;
+margin-bottom:20px;
+color:#0f172a;
 }
 
-.content p{
-margin-top:15px;
-color:#aaa;
-max-width:500px;
-line-height:1.6;
-}
-
-/* BUTTON */
-.btn{
-display:inline-block;
-margin-top:25px;
-padding:12px 25px;
-background:#fbbf24;
-color:black;
-border-radius:30px;
-text-decoration:none;
-font-weight:bold;
-transition:0.3s;
-}
-
-.btn:hover{
-transform:scale(1.05);
-}
-
-/* RIGHT FLOAT MENU (like image) */
-.menu{
-position:fixed;
-right:20px;
-top:50%;
-transform:translateY(-50%);
+/* ABOUT */
+.about-box{
 display:flex;
-flex-direction:column;
-gap:15px;
-}
-
-.menu div{
-width:45px;
-height:45px;
-border-radius:50%;
-background:#222;
-display:flex;
+gap:30px;
 align-items:center;
-justify-content:center;
-cursor:pointer;
+flex-wrap:wrap;
+}
+
+.about-box img{
+width:280px;
+border-radius:10px;
+}
+
+.about-text{
+flex:1;
+}
+
+/* SERVICES */
+.services{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+gap:20px;
+}
+
+.card{
+background:#f1f5f9;
+padding:20px;
+border-radius:10px;
 transition:0.3s;
 }
 
-.menu div:hover{
-background:#fbbf24;
-color:black;
+.card:hover{
+transform:translateY(-5px);
+background:#e2e8f0;
+}
+
+/* CONTACT */
+.contact{
+background:#0f172a;
+color:white;
+text-align:center;
+}
+
+.contact a{
+color:#38bdf8;
+text-decoration:none;
+}
+
+/* RESPONSIVE */
+@media(max-width:768px){
+.sidebar{position:relative;width:100%;height:auto;}
+.main{margin-left:0;}
+.hero h1{font-size:32px;}
 }
 </style>
 
@@ -128,39 +182,72 @@ color:black;
 
 <body>
 
-<div class="container">
+<!-- SIDEBAR -->
+<div class="sidebar">
 
-<!-- LEFT IMAGE -->
-<div class="left">
-<img src="myphoto.jpg" alt="profile">
+<div class="profile">
+<img src="https://i.pravatar.cc/150?img=12">
+<h2>Allah Rakha</h2>
+<p>Available for work</p>
 </div>
 
-<!-- RIGHT CONTENT -->
-<div class="right">
-<div class="content">
+<nav>
+<a href="#home">Home</a>
+<a href="#about">About</a>
+<a href="#services">Services</a>
+<a href="#contact">Contact</a>
+</nav>
 
-<h4>— I'M ALLAH RAKHA</h4>
-<h1>UNITY <span>DEVELOPER</span></h1>
+</div>
 
-<h2>Game Developer & C# Programmer</h2>
+<!-- MAIN -->
+<div class="main">
 
+<!-- HERO -->
+<section class="hero" id="home">
+<div class="hero-content">
+<h1>Hi, I'm <span>Allah Rakha</span></h1>
+<p>Unity Developer | Web Designer | UI/UX Learner</p>
+</div>
+</section>
+
+<!-- ABOUT -->
+<section id="about">
+<h2>About Me</h2>
+
+<div class="about-box">
+<img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e">
+
+<div class="about-text">
 <p>
-I build modern 2D & 3D Unity games with smooth gameplay, UI systems and interactive mechanics.
+I am a passionate developer creating modern websites and Unity games.
+I focus on clean UI, fast performance, and modern design trends.
 </p>
-
-<a class="btn" href="#contact">HIRE ME</a>
-
-</div>
 </div>
 
 </div>
+</section>
 
-<!-- SIDE MENU -->
-<div class="menu">
-<div>🏠</div>
-<div>👤</div>
-<div>💼</div>
-<div>✉️</div>
+<!-- SERVICES -->
+<section id="services">
+<h2>My Services</h2>
+
+<div class="services">
+
+<div class="card">🎮 Unity Game Development</div>
+<div class="card">💻 Web Development</div>
+<div class="card">🎨 UI/UX Design</div>
+
+</div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact" class="contact">
+<h2>Contact Me</h2>
+<p>Email: allahrakha64@gmail.com</p>
+<p>Freelance available</p>
+</section>
+
 </div>
 
 </body>
